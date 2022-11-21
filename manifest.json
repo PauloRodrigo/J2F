@@ -2,20 +2,16 @@
     "name": "J2F",
     "version": "1.0",
     "manifest_version": 3,
-
     "action": {
         "default_popup": "index.html"
     },
-
     "content_scripts": [
         {
           "matches": ["<all_urls>"],
           "js": ["content.js"]
         }
     ],
-
-    "permissions": ["storage", "tabs", "activeTab", "declarativeContent"],
-    
+    "permissions": ["storage", "tabs", "activeTab", "declarativeContent", "contextMenus"],
     "icons": { "16":  "icons/icon16.png",
                "48":  "icons/icon48.png",
                "128": "icons/icon128.png" }

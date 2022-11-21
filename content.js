@@ -6,7 +6,17 @@ chrome.runtime.onMessage.addListener(
 
             for(var i in jsonParsed){
                 var val = jsonParsed[i];
-                document.getElementById(i).value = val;
+
+                console.log(i);
+                if(document.getElementById(i)) {
+                    console.log('achou id');
+                    document.getElementById(i).value = val;
+                } else {
+                    if (document.querySelector("[name="+i+"]")) {
+                        console.log('achou nome');
+                        document.querySelector("[name="+i+"]").value = val;
+                    }
+                }
             }
         } catch (error) {
             console.log(chrome.runtime.lastError+" "+error);
